@@ -1,0 +1,15 @@
+# Input/Output files
+*.pdf
+*.csv
+*.xlsx
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env/
+.venv/
+env/
+venv/
