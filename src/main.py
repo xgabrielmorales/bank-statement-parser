@@ -60,7 +60,7 @@ class BankStatementParser:
             ValueError: If the given PDF file does not contain any bank statements.
         """
         if not getattr(self, "_is_valid", False):
-            raise Exception("You must call the .is_valid() method first.")
+            raise Exception("You must call the `.is_valid()` method first.")
 
         tables = tb.read_pdf(
             input_path=self.input_path,
