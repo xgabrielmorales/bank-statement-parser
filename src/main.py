@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 import tabula as tb
-from config import BBVA_SAVINGS_ACCOUNT_COLOMBIA, BankStatementConfig
+from config import BankStatementConfig, SavingAccountBBVAColombia
 
 
 class BankStatementParser:
@@ -120,7 +120,7 @@ def main() -> int:
     # The name of the file located in the ./data/input directory.
     filename = "savings_account.pdf"
     # The configuration of your bank statement.
-    bank_config = BBVA_SAVINGS_ACCOUNT_COLOMBIA
+    bank_config = SavingAccountBBVAColombia()
 
     parser = BankStatementParser(filename=filename, bank_config=bank_config)
     parser.is_valid()

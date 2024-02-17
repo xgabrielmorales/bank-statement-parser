@@ -1,14 +1,11 @@
-from pydantic import BaseModel
-
-
-class BankStatementConfig(BaseModel):
+class BankStatementConfig:
     columns: dict[str, str]
     decimal_separator: str
     thousands_separator: str
 
 
-BBVA_SAVINGS_ACCOUNT_COLOMBIA = BankStatementConfig(
-    columns={
+class SavingAccountBBVAColombia(BankStatementConfig):
+    columns = {
         "MOVIMIENTO": "UInt32",
         "FECHA_OPERACION": "str",
         "FECHA_VALOR": "str",
@@ -16,7 +13,6 @@ BBVA_SAVINGS_ACCOUNT_COLOMBIA = BankStatementConfig(
         "CARGOS": "float64",
         "ABONOS": "float64",
         "SALDO": "float64",
-    },
-    decimal_separator=".",
-    thousands_separator=",",
-)
+    }
+    decimal_separator = "."
+    thousands_separator = ","
